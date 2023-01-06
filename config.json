@@ -1,0 +1,13 @@
+{
+	"WoS" : "files/WoS/wos-core_SCIE 2022-February-23.csv",
+	"categories" : "files/WoS/WoS_categories.csv",
+	"SJR": "files/Scimagojr/scimagojr_2020.csv",
+	"CORE": "files/CORE/CORE_2021.csv",
+	"FoR_CORE": "files/CORE/CORE_FoR_correspondance.csv",
+	"wikiCfp": "files/wikiCfp/",
+	"ES":"localhost",
+	"ES_port":9200,
+	"ES_index_ACL":"acl",
+	"ES_index_authors":"authors",
+	"ES_index_WikiCfp":"wikicfp"
+}
