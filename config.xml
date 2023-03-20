@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project default="create_run_jar" name="Create Runnable Jar for Project PublicationScore">
+<project default="create_run_jar" name="Create Runnable Jar for Project publicationScore">
     <!--this file was created by Eclipse Runnable JAR Export Wizard-->
     <!--ANT 1.7 is required                                        -->
     <!--define folder properties-->
     <property name="dir.buildfile" value="."/>
-    <property name="dir.workspace" value="${dir.buildfile}/.."/>
+    <property name="dir.workspace" value="/Users/ntravers/eclipse-workspace"/>
     <property name="dir.jarfile" value="${dir.buildfile}"/>
     <target name="create_run_jar">
         <jar destfile="${dir.jarfile}/publicationScore.jar" filesetmanifest="mergewithoutmain">
             <manifest>
-                <attribute name="Main-Class" value="fr.publiScore.ExtractResearcher"/>
+                <attribute name="Main-Class" value="fr.publiScore.PubliScore_ExtractResearcher"/>
                 <attribute name="Class-Path" value="."/>
             </manifest>
             <fileset dir="${dir.jarfile}/bin"/>
-            <zipfileset excludes="META-INF/*.SF" src="${dir.jarfile}/libs/json-simple-1.1.jar"/>
-            <zipfileset excludes="META-INF/*.SF" src="${dir.jarfile}/libs/elasticsearch-rest-client-7.12.1.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.jarfile}/libs/commons-lang3-3.12.0.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.jarfile}/libs/commons-logging-1.2.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.jarfile}/libs/dom-2.3.0-jaxb-1.0.6.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="${dir.jarfile}/libs/elasticsearch-7.12.1.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="${dir.jarfile}/libs/elasticsearch-core-7.12.1.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.jarfile}/libs/elasticsearch-rest-client-7.12.1.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="${dir.jarfile}/libs/httpasyncclient-4.1.4.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="${dir.jarfile}/libs/httpclient-4.5.13.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="${dir.jarfile}/libs/httpcore-4.4.14.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="${dir.jarfile}/libs/httpcore-nio-4.4.14.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="${dir.jarfile}/libs/httpmime-4.3.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.jarfile}/libs/json-simple-1.1.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="${dir.jarfile}/libs/log4j-1.2.17.jar"/>
-            <zipfileset excludes="META-INF/*.SF" src="${dir.jarfile}/libs/commons-logging-1.2.jar"/>
-            <zipfileset excludes="META-INF/*.SF" src="${dir.jarfile}/libs/dom-2.3.0-jaxb-1.0.6.jar"/>
-            <zipfileset excludes="META-INF/*.SF" src="${dir.jarfile}/libs/commons-lang3-3.12.0.jar"/>
         </jar>
     </target>
 </project>

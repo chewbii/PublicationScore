@@ -2,15 +2,15 @@ package fr.publiScore;
 
 import fr.dvrc.ES;
 
-public class UpdateRepo {
+public class PubliScore_UpdateRepo {
 	private ExtractJournal journals;
 	private ExtractConf confs;
 
-	public UpdateRepo () {
+	public PubliScore_UpdateRepo () {
+		ES.config();
 		journals = new ExtractJournal ();
 		confs = new ExtractConf ();
 
-		ES.config();
 		try {
 			
 			ES.open();
@@ -26,6 +26,6 @@ public class UpdateRepo {
 		}
 	}
 	public static void main(String [] args) {
-		new UpdateRepo ();
+		new PubliScore_UpdateRepo ();
 	}
 }

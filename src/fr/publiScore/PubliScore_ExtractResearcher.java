@@ -22,8 +22,8 @@ import fr.dvrc.types.Conference;
 import fr.dvrc.types.Journal;
 import fr.dvrc.types.Type;
 
-public class ExtractResearcher {
-	public ExtractResearcher(String name, boolean isUrl) throws Exception {
+public class PubliScore_ExtractResearcher {
+	public PubliScore_ExtractResearcher(String name, boolean isUrl) throws Exception {
 		try{
 			ES.config();
 			ES.open();
@@ -65,6 +65,7 @@ public class ExtractResearcher {
 				}
 			}
 		} else {
+			System.out.println("URL: \""+name+"\"");
 			searchPublications (name, new JSONObject());
 		}
 	}
@@ -234,12 +235,12 @@ public class ExtractResearcher {
 	
 	public static void main (String [] args) {
 		try {
-			String name="";
-			for(String s : args)
-				name += s+" ";
+			String name=args[0];
+			for(int i=1;i<args.length;i++)
+				name += " "+args[i];
 			if(name.length() == 0)
 				System.out.println("need a name!");
-			new ExtractResearcher (name, name.startsWith("http"));
+			new PubliScore_ExtractResearcher (name, name.startsWith("http"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
