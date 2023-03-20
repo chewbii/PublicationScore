@@ -1,3 +1,6 @@
 *.class
 *.log*
 /bin/
+/.DS_Store
+/.project
+/.classpath
