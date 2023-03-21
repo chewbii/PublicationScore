@@ -45,8 +45,8 @@ public class PubliScore_ExtractResearcher {
 			Document d = readXML ("https://dblp.org/search/author/api?format=xml&q="+url_name);
 			Node n = d.getElementsByTagName("hit").item(0);
 			NodeList nl = n.getChildNodes();
-			JSONObject author = new JSONObject ();
-			author.put("author", name);
+			//JSONObject author = new JSONObject ();
+			//author.put("author", name);
 			for(int i=0; i<nl.getLength(); i++) {
 				if(nl.item(i).getNodeName() == null)
 					;
@@ -59,22 +59,30 @@ public class PubliScore_ExtractResearcher {
 							System.out.println(info.item(j).getTextContent());
 						else if(info.item(j).getNodeName().compareTo("url") == 0) {
 							System.out.println(info.item(j).getTextContent());
-							searchPublications(info.item(j).getTextContent(), author);
+							searchPublications(info.item(j).getTextContent());//,author);
 						}
 					}
 				}
 			}
 		} else {
 			System.out.println("URL: \""+name+"\"");
-			searchPublications (name, new JSONObject());
+			searchPublications (name);//, new JSONObject());
 		}
 	}
 
-	public void searchPublications (String url, JSONObject author) throws Exception {
+	public void searchPublications (String url) throws Exception {
 		Document d = readXML (url+".xml");
-		NodeList nl = d.getElementsByTagName("r");
+		
+		NodeList nl = d.getElementsByTagName("author");
+		String name = nl.item(0).getTextContent();
+		JSONObject author = new JSONObject ();
+		author.put("author", name);
+
 		Node n;
 		JSONObject o = null, copy = null;
+
+		
+		nl = d.getElementsByTagName("r");
 
 		for(int i=0;i<nl.getLength();i++) {
 			n = nl.item(i).getChildNodes().item(0);
